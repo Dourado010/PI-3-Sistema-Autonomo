@@ -325,5 +325,36 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
             AtualizarTurno();
             MostrarCercados();
         }
+
+        private void lstListadePartidas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstListadePartidas.SelectedItem == null)
+                return;
+
+            string partida = lstListadePartidas.SelectedItem.ToString();
+            string[] dadosPartida = partida.Split(',');
+
+            int idPartida = Convert.ToInt32(dadosPartida[0]);
+            string nomePartida = dadosPartida[1];
+            string data = dadosPartida[2];
+
+            lblID.Text = idPartida.ToString();
+            lblNomeDaPartida.Text = nomePartida;
+            lblDataDaPartida.Text = data;
+
+            txtGrupo.Text = idPartida.ToString();
+
+            string retorno = Jogo.ListarJogadores(idPartida);
+
+            retorno = retorno.Replace("\r", "");
+            string[] jogadores = retorno.Split('\n');
+
+            lstDadosPartida.Items.Clear();
+
+            for (int i = 0; i < jogadores.Length - 1; i++)
+            {
+                lstDadosPartida.Items.Add(jogadores[i]);
+            }
+        }
     }
 }

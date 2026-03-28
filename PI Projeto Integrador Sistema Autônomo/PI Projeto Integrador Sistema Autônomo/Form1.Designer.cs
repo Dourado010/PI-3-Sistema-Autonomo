@@ -117,6 +117,7 @@
             this.lstListadePartidas.Name = "lstListadePartidas";
             this.lstListadePartidas.Size = new System.Drawing.Size(120, 147);
             this.lstListadePartidas.TabIndex = 6;
+            this.lstListadePartidas.SelectedIndexChanged += new System.EventHandler(this.lstListadePartidas_SelectedIndexChanged);
             // 
             // btnCriarPartida
             // 
