@@ -77,7 +77,7 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
         {
             string nome = txtNome.Text;
             string senha = txtSenha.Text;
-            string grupo = txtGrupo.Text;
+            string grupo = "Paleontólogos";
 
             if (nome == "" || senha == "")
             {
@@ -143,9 +143,13 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
             }
 
             string idJogador = partes[0];
+            string senhaGerada = partes[1];
 
-            lblIdJogador.Text = idJogador;
-            lblSenhaJogador.Text = senhaJogador;
+            idJogadorSalvo = idJogador;
+            senhaJogadorSalvo = senhaGerada;
+
+            lblIdJogador.Text = idJogadorSalvo;
+            lblSenhaJogador.Text = senhaJogadorSalvo;
 
             MessageBox.Show("Jogador entrou na partida!");
         }
@@ -175,9 +179,15 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
 
         void MostrarMao()
         {
+            if (idJogadorSalvo == "" || senhaJogadorSalvo == "")
+            {
+                MessageBox.Show("Entre na partida primeiro!");
+                return;
+            }
+
             int idJogador = Convert.ToInt32(idJogadorSalvo);
 
-            string retorno = Jogo.ListarDinossauros(false);
+            string retorno = Jogo.ExibirMao(idJogador, senhaJogadorSalvo);
 
             if (retorno.StartsWith("ERRO"))
             {
