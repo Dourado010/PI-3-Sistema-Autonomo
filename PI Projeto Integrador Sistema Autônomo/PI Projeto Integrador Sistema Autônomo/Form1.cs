@@ -260,13 +260,17 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
                     }
                 }
             }
+
+            lblTurno.Text = "Turno: " + turno;
+            lblJogadorDaVez.Text = "Jogador: " + nomeJogador;
+            lblDado.Text = "Dado: " + dado;
         }
 
         void MostrarCercados()
         {
             int idJogador = Convert.ToInt32(idJogadorSalvo);
 
-            string retorno = Jogo.ExibirTabuleiro(idJogador, senhaJogadorSalvo);
+            string retorno = Jogo.ListarCercados();
 
             if (retorno.StartsWith("ERRO"))
             {
@@ -299,19 +303,20 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
                 return;
             }
 
-            string dino = lstMaoJogador.SelectedItem.ToString();
+            string item = lstMaoJogador.SelectedItem.ToString();
+            string dinoId = item.Split(',')[0];
+            string dinoNome = item.Split(',')[1];
 
-            if (lblDado.Text.Contains("Carn") && !dino.Contains("Carn"))
+            if (lblDado.Text.Contains("Carn") && !dinoNome.Contains("Carn"))
             {
                 MessageBox.Show("Jogada inválida para esse dado!");
                 return;
             }
 
             int idJogador = Convert.ToInt32(idJogadorSalvo);
+            string cercado = txtCercado.Text;
 
-            string cercado = txtCercado.Text; ; // você pode melhorar depois
-
-            string retorno = Jogo.Jogar(idJogador, senhaJogadorSalvo, dino, cercado);
+            string retorno = Jogo.Jogar(idJogador, senhaJogadorSalvo, dinoId, cercado);
 
             if (retorno.StartsWith("ERRO"))
             {
