@@ -48,6 +48,13 @@
             this.lbl4 = new System.Windows.Forms.Label();
             this.lstMaoJogador = new System.Windows.Forms.ListBox();
             this.lblNossoGrupo = new System.Windows.Forms.Label();
+            this.lblTurno = new System.Windows.Forms.Label();
+            this.lblJogadorDaVez = new System.Windows.Forms.Label();
+            this.lblDado = new System.Windows.Forms.Label();
+            this.lstCercados = new System.Windows.Forms.ListBox();
+            this.btnJogar = new System.Windows.Forms.Button();
+            this.txtCercado = new System.Windows.Forms.TextBox();
+            this.lblCercado = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -197,7 +204,7 @@
             // lbl4
             // 
             this.lbl4.AutoSize = true;
-            this.lbl4.Location = new System.Drawing.Point(712, 386);
+            this.lbl4.Location = new System.Drawing.Point(726, 386);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(40, 13);
             this.lbl4.TabIndex = 18;
@@ -220,11 +227,79 @@
             this.lblNossoGrupo.TabIndex = 20;
             this.lblNossoGrupo.Text = "Paleontólogos: Gabriel de Lima Dourado e Álvaro Cereja de Souza";
             // 
+            // lblTurno
+            // 
+            this.lblTurno.AutoSize = true;
+            this.lblTurno.Location = new System.Drawing.Point(489, 281);
+            this.lblTurno.Name = "lblTurno";
+            this.lblTurno.Size = new System.Drawing.Size(62, 13);
+            this.lblTurno.TabIndex = 21;
+            this.lblTurno.Text = "Turno Atual";
+            // 
+            // lblJogadorDaVez
+            // 
+            this.lblJogadorDaVez.AutoSize = true;
+            this.lblJogadorDaVez.Location = new System.Drawing.Point(597, 281);
+            this.lblJogadorDaVez.Name = "lblJogadorDaVez";
+            this.lblJogadorDaVez.Size = new System.Drawing.Size(128, 13);
+            this.lblJogadorDaVez.TabIndex = 22;
+            this.lblJogadorDaVez.Text = "Jogador que rolou o dado";
+            // 
+            // lblDado
+            // 
+            this.lblDado.AutoSize = true;
+            this.lblDado.Location = new System.Drawing.Point(624, 315);
+            this.lblDado.Name = "lblDado";
+            this.lblDado.Size = new System.Drawing.Size(119, 13);
+            this.lblDado.TabIndex = 23;
+            this.lblDado.Text = "Valor do Dado sorteado";
+            // 
+            // lstCercados
+            // 
+            this.lstCercados.FormattingEnabled = true;
+            this.lstCercados.Location = new System.Drawing.Point(431, 315);
+            this.lstCercados.Name = "lstCercados";
+            this.lstCercados.Size = new System.Drawing.Size(120, 95);
+            this.lstCercados.TabIndex = 24;
+            // 
+            // btnJogar
+            // 
+            this.btnJogar.Location = new System.Drawing.Point(600, 344);
+            this.btnJogar.Name = "btnJogar";
+            this.btnJogar.Size = new System.Drawing.Size(112, 27);
+            this.btnJogar.TabIndex = 25;
+            this.btnJogar.Text = "Realizar Jogada";
+            this.btnJogar.UseVisualStyleBackColor = true;
+            this.btnJogar.Click += new System.EventHandler(this.btnJogar_Click);
+            // 
+            // txtCercado
+            // 
+            this.txtCercado.Location = new System.Drawing.Point(620, 402);
+            this.txtCercado.Name = "txtCercado";
+            this.txtCercado.Size = new System.Drawing.Size(100, 20);
+            this.txtCercado.TabIndex = 26;
+            // 
+            // lblCercado
+            // 
+            this.lblCercado.AutoSize = true;
+            this.lblCercado.Location = new System.Drawing.Point(564, 405);
+            this.lblCercado.Name = "lblCercado";
+            this.lblCercado.Size = new System.Drawing.Size(50, 13);
+            this.lblCercado.TabIndex = 27;
+            this.lblCercado.Text = "Cercado:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCercado);
+            this.Controls.Add(this.txtCercado);
+            this.Controls.Add(this.btnJogar);
+            this.Controls.Add(this.lstCercados);
+            this.Controls.Add(this.lblDado);
+            this.Controls.Add(this.lblJogadorDaVez);
+            this.Controls.Add(this.lblTurno);
             this.Controls.Add(this.lblNossoGrupo);
             this.Controls.Add(this.lstMaoJogador);
             this.Controls.Add(this.lbl4);
@@ -274,6 +349,13 @@
         private System.Windows.Forms.Label lbl4;
         private System.Windows.Forms.ListBox lstMaoJogador;
         private System.Windows.Forms.Label lblNossoGrupo;
+        private System.Windows.Forms.Label lblTurno;
+        private System.Windows.Forms.Label lblJogadorDaVez;
+        private System.Windows.Forms.Label lblDado;
+        private System.Windows.Forms.ListBox lstCercados;
+        private System.Windows.Forms.Button btnJogar;
+        private System.Windows.Forms.TextBox txtCercado;
+        private System.Windows.Forms.Label lblCercado;
     }
 }
 
