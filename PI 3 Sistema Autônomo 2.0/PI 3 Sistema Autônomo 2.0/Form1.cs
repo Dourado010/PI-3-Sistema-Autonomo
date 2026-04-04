@@ -8,7 +8,7 @@ namespace PI_3_Sistema_Autônomo_2._0
     {
         string idJogadorSalvo = "";
         string senhaJogadorSalvo = "";
-
+        int idPartidaSalvo = 0;
         public Form1()
         {
             InitializeComponent();
@@ -47,7 +47,7 @@ namespace PI_3_Sistema_Autônomo_2._0
             string data = dadosPartida[2];
 
             lblID.Text = idPartida.ToString();
-            lblNomeDaPartida.Text = nomePartida;
+            
             lblDataDaPartida.Text = data;
 
             txtGrupo.Text = idPartida.ToString();
@@ -69,7 +69,7 @@ namespace PI_3_Sistema_Autônomo_2._0
         {
             string nome = txtNome.Text;
             string senha = txtSenha.Text;
-            string grupo = txtGrupo.Text;
+            string grupo = "Paleontólogos";
 
             if (nome == "" || senha == "")
             {
@@ -119,6 +119,8 @@ namespace PI_3_Sistema_Autônomo_2._0
                 return;
             }
 
+            idPartidaSalvo = idPartida;
+
             string retorno = Jogo.Entrar(idPartida, nomeJogador, senhaJogador);
 
             if (retorno.StartsWith("ERRO"))
@@ -136,18 +138,188 @@ namespace PI_3_Sistema_Autônomo_2._0
             }
 
             string idJogador = partes[0];
+            string senhaGerada = partes[1];
 
-            lblIdJogador.Text = idJogador;
-            lblSenhaJogador.Text = senhaJogador;
+            idJogadorSalvo = idJogador;
+            senhaJogadorSalvo = senhaGerada;
 
-            MessageBox.Show("Entrou na partida!");
+            lblIdJogador.Text = idJogadorSalvo;
+            lblSenhaJogador.Text = senhaJogadorSalvo;
+
+            MessageBox.Show("Jogador entrou na partida!");
         }
 
         // eventos vazios (pra não dar erro)
-       
-        private void btnIniciarPartida_Click(object sender, EventArgs e) { }
+
+        private void btnIniciarPartida_Click(object sender, EventArgs e)
+        {
+            if (idJogadorSalvo == "" || senhaJogadorSalvo == "")
+            {
+                MessageBox.Show("Entre na partida primeiro");
+                return;
+            }
+
+            int idJogador = Convert.ToInt32(idJogadorSalvo);
+
+            string retorno = Jogo.Iniciar(idJogador, senhaJogadorSalvo);
+
+            if (retorno.StartsWith("ERRO"))
+            {
+                MessageBox.Show(retorno);
+                return;
+            }
+
+            MessageBox.Show("Partida iniciada");
+
+            AtualizarTurno();
+            MostrarMao();
+            MostrarCercados();
+        }
+        void MostrarMao()
+        {
+            if (idJogadorSalvo == "" || senhaJogadorSalvo == "")
+            {
+                MessageBox.Show("Entre na partida primeiro!");
+                return;
+            }
+
+            int idJogador = Convert.ToInt32(idJogadorSalvo);
+
+            string retorno = Jogo.ExibirMao(idJogador, senhaJogadorSalvo);
+
+            if (retorno.StartsWith("ERRO"))
+            {
+                MessageBox.Show(retorno);
+                return;
+            }
+
+            retorno = retorno.Replace("\r", "");
+
+            string[] dinos = retorno.Split('\n');
+
+            lstMaoJogador.Items.Clear();
+
+            foreach (string d in dinos)
+            {
+                if (d.Trim() != "")
+                    lstMaoJogador.Items.Add(d);
+            }
+        }
+
+        void AtualizarTurno()
+        {
+            int idJogador = Convert.ToInt32(idJogadorSalvo);
+
+            string retorno = Jogo.VerificarTurno(idPartidaSalvo);
+
+            if (retorno.StartsWith("ERRO"))
+            {
+                MessageBox.Show(retorno);
+                return;
+            }
+
+            // esperado: turno,nomeJogador,dado
+
+            string[] dados = retorno.Split(',');
+
+            if (dados.Length < 3)
+            {
+                MessageBox.Show("Retorno inesperado: " + retorno);
+                return;
+            }
+
+            string turno = dados[0];
+            string idJogadorDaVez = dados[1];
+            string dado = dados[2];
+
+            // 🔥 AGORA PEGAR NOME DO JOGADOR
+            string lista = Jogo.ListarJogadores(idPartidaSalvo);
+
+            lista = lista.Replace("\r", "");
+            string[] jogadores = lista.Split('\n');
+
+            string nomeJogador = "Desconhecido";
+
+            foreach (string j in jogadores)
+            {
+                if (j.Trim() != "")
+                {
+                    string[] info = j.Split(',');
+
+                    if (info[0] == idJogadorDaVez)
+                    {
+                        nomeJogador = info[1];
+                        break;
+                    }
+                }
+            }
+
+            lblTurno.Text = "Turno: " + turno;
+            lblJogadorDaVez.Text = "Jogador: " + nomeJogador;
+            lblDado.Text = "Dado: " + dado;
+        }
+
+        void MostrarCercados()
+        {
+            int idJogador = Convert.ToInt32(idJogadorSalvo);
+
+            string retorno = Jogo.ListarCercados();
+
+            if (retorno.StartsWith("ERRO"))
+            {
+                MessageBox.Show(retorno);
+                return;
+            }
+
+            retorno = retorno.Replace("\r", "");
+
+            string[] linhas = retorno.Split('\n');
+
+            lstCercados.Items.Clear();
+
+            foreach (string l in linhas)
+            {
+                if (l.Trim() != "")
+                    lstCercados.Items.Add(l);
+            }
+        }
+
         private void lstMaoJogador_SelectedIndexChanged(object sender, EventArgs e) { }
 
-      
+        private void btnJogar_Click(object sender, EventArgs e)
+        {
+            if (lstMaoJogador.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um dinossauro!");
+                return;
+            }
+
+            string item = lstMaoJogador.SelectedItem.ToString();
+            string dinoId = item.Split(',')[0];
+            string dinoNome = item.Split(',')[1];
+
+            if (lblDado.Text.Contains("Carn") && !dinoNome.Contains("Carn"))
+            {
+                MessageBox.Show("Jogada inválida para esse dado!");
+                return;
+            }
+
+            int idJogador = Convert.ToInt32(idJogadorSalvo);
+            string cercado = txtCercado.Text;
+
+            string retorno = Jogo.Jogar(idJogador, senhaJogadorSalvo, dinoId, cercado);
+
+            if (retorno.StartsWith("ERRO"))
+            {
+                MessageBox.Show(retorno);
+                return;
+            }
+
+            MessageBox.Show("Jogada realizada!");
+
+            MostrarMao();
+            AtualizarTurno();
+            MostrarCercados();
+        }
     }
 }

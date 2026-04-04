@@ -36,11 +36,10 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtGrupo = new System.Windows.Forms.TextBox();
-            this.lblNomeDaPartida = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.lblDataDaPartida = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblNome = new System.Windows.Forms.Label();
+            this.lblNomeDaPartida = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
             this.lblGrupo = new System.Windows.Forms.Label();
             this.btnIniciarPartida = new System.Windows.Forms.Button();
@@ -54,6 +53,13 @@
             this.txtEntrarNaSala = new System.Windows.Forms.TextBox();
             this.btnEntrarNaPartida = new System.Windows.Forms.Button();
             this.lstMaoJogador = new System.Windows.Forms.ListBox();
+            this.lblTurno = new System.Windows.Forms.Label();
+            this.lstCercados = new System.Windows.Forms.ListBox();
+            this.lblJogadorDaVez = new System.Windows.Forms.Label();
+            this.lblDado = new System.Windows.Forms.Label();
+            this.btnJogar = new System.Windows.Forms.Button();
+            this.txtCercado = new System.Windows.Forms.TextBox();
+            this.lblCercado = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnConsulta
@@ -124,15 +130,6 @@
             this.txtGrupo.Size = new System.Drawing.Size(100, 20);
             this.txtGrupo.TabIndex = 11;
             // 
-            // lblNomeDaPartida
-            // 
-            this.lblNomeDaPartida.AutoSize = true;
-            this.lblNomeDaPartida.Location = new System.Drawing.Point(455, 145);
-            this.lblNomeDaPartida.Name = "lblNomeDaPartida";
-            this.lblNomeDaPartida.Size = new System.Drawing.Size(86, 13);
-            this.lblNomeDaPartida.TabIndex = 6;
-            this.lblNomeDaPartida.Text = "Nome da Partida";
-            // 
             // lblID
             // 
             this.lblID.AutoSize = true;
@@ -160,14 +157,14 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Paleontólogos: Gabriel de Lima Dourado e Álvaro Cereja de Souza";
             // 
-            // lblNome
+            // lblNomeDaPartida
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(22, 49);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(38, 13);
-            this.lblNome.TabIndex = 13;
-            this.lblNome.Text = "Nome:";
+            this.lblNomeDaPartida.AutoSize = true;
+            this.lblNomeDaPartida.Location = new System.Drawing.Point(22, 49);
+            this.lblNomeDaPartida.Name = "lblNomeDaPartida";
+            this.lblNomeDaPartida.Size = new System.Drawing.Size(38, 13);
+            this.lblNomeDaPartida.TabIndex = 13;
+            this.lblNomeDaPartida.Text = "Nome:";
             // 
             // lblSenha
             // 
@@ -282,11 +279,79 @@
             this.lstMaoJogador.TabIndex = 26;
             this.lstMaoJogador.SelectedIndexChanged += new System.EventHandler(this.lstMaoJogador_SelectedIndexChanged);
             // 
+            // lblTurno
+            // 
+            this.lblTurno.AutoSize = true;
+            this.lblTurno.Location = new System.Drawing.Point(441, 290);
+            this.lblTurno.Name = "lblTurno";
+            this.lblTurno.Size = new System.Drawing.Size(35, 13);
+            this.lblTurno.TabIndex = 27;
+            this.lblTurno.Text = "Turno";
+            // 
+            // lstCercados
+            // 
+            this.lstCercados.FormattingEnabled = true;
+            this.lstCercados.Location = new System.Drawing.Point(444, 319);
+            this.lstCercados.Name = "lstCercados";
+            this.lstCercados.Size = new System.Drawing.Size(158, 121);
+            this.lstCercados.TabIndex = 28;
+            // 
+            // lblJogadorDaVez
+            // 
+            this.lblJogadorDaVez.AutoSize = true;
+            this.lblJogadorDaVez.Location = new System.Drawing.Point(659, 290);
+            this.lblJogadorDaVez.Name = "lblJogadorDaVez";
+            this.lblJogadorDaVez.Size = new System.Drawing.Size(35, 13);
+            this.lblJogadorDaVez.TabIndex = 29;
+            this.lblJogadorDaVez.Text = "Turno";
+            // 
+            // lblDado
+            // 
+            this.lblDado.AutoSize = true;
+            this.lblDado.Location = new System.Drawing.Point(659, 316);
+            this.lblDado.Name = "lblDado";
+            this.lblDado.Size = new System.Drawing.Size(119, 13);
+            this.lblDado.TabIndex = 30;
+            this.lblDado.Text = "Valor do Dado sorteado";
+            // 
+            // btnJogar
+            // 
+            this.btnJogar.Location = new System.Drawing.Point(672, 348);
+            this.btnJogar.Name = "btnJogar";
+            this.btnJogar.Size = new System.Drawing.Size(75, 23);
+            this.btnJogar.TabIndex = 31;
+            this.btnJogar.Text = "Realizar Jogada";
+            this.btnJogar.UseVisualStyleBackColor = true;
+            this.btnJogar.Click += new System.EventHandler(this.btnJogar_Click);
+            // 
+            // txtCercado
+            // 
+            this.txtCercado.Location = new System.Drawing.Point(662, 391);
+            this.txtCercado.Name = "txtCercado";
+            this.txtCercado.Size = new System.Drawing.Size(100, 20);
+            this.txtCercado.TabIndex = 32;
+            // 
+            // lblCercado
+            // 
+            this.lblCercado.AutoSize = true;
+            this.lblCercado.Location = new System.Drawing.Point(606, 391);
+            this.lblCercado.Name = "lblCercado";
+            this.lblCercado.Size = new System.Drawing.Size(50, 13);
+            this.lblCercado.TabIndex = 33;
+            this.lblCercado.Text = "Cercado:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCercado);
+            this.Controls.Add(this.txtCercado);
+            this.Controls.Add(this.btnJogar);
+            this.Controls.Add(this.lblDado);
+            this.Controls.Add(this.lblJogadorDaVez);
+            this.Controls.Add(this.lstCercados);
+            this.Controls.Add(this.lblTurno);
             this.Controls.Add(this.lstMaoJogador);
             this.Controls.Add(this.btnEntrarNaPartida);
             this.Controls.Add(this.txtEntrarID);
@@ -300,9 +365,8 @@
             this.Controls.Add(this.btnIniciarPartida);
             this.Controls.Add(this.lblGrupo);
             this.Controls.Add(this.lblSenha);
-            this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNomeDaPartida);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.lblDataDaPartida);
             this.Controls.Add(this.txtGrupo);
@@ -330,11 +394,10 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.TextBox txtGrupo;
-        private System.Windows.Forms.Label lblNomeDaPartida;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblDataDaPartida;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label lblNomeDaPartida;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Label lblGrupo;
         private System.Windows.Forms.Button btnIniciarPartida;
@@ -348,6 +411,13 @@
         private System.Windows.Forms.TextBox txtEntrarNaSala;
         private System.Windows.Forms.Button btnEntrarNaPartida;
         private System.Windows.Forms.ListBox lstMaoJogador;
+        private System.Windows.Forms.Label lblTurno;
+        private System.Windows.Forms.ListBox lstCercados;
+        private System.Windows.Forms.Label lblJogadorDaVez;
+        private System.Windows.Forms.Label lblDado;
+        private System.Windows.Forms.Button btnJogar;
+        private System.Windows.Forms.TextBox txtCercado;
+        private System.Windows.Forms.Label lblCercado;
     }
 }
 

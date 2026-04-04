@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\cetad\\Downloads\\PI 3 Sistema Aut\u00F4nomo 2.0\\",
+  "WorkspaceRootPath": "C:\\Users\\cetad\\Downloads\\PI 3 Sistema Aut\u00F4nomo 2.0 - main\\PI-3-Sistema-Autonomo\\PI 3 Sistema Aut\u00F4nomo 2.0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C37DA169-1A66-4751-85F1-BCB9DDD7E936}|PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0.csproj|c:\\users\\cetad\\downloads\\pi 3 sistema aut\u00F4nomo 2.0\\pi 3 sistema aut\u00F4nomo 2.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C37DA169-1A66-4751-85F1-BCB9DDD7E936}|PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0.csproj|solutionrelative:pi 3 sistema aut\u00F4nomo 2.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C37DA169-1A66-4751-85F1-BCB9DDD7E936}|PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0.csproj|C:\\Users\\cetad\\Downloads\\PI 3 Sistema Aut\u00F4nomo 2.0 - main\\PI-3-Sistema-Autonomo\\PI 3 Sistema Aut\u00F4nomo 2.0\\pi 3 sistema aut\u00F4nomo 2.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C37DA169-1A66-4751-85F1-BCB9DDD7E936}|PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0.csproj|solutionrelative:pi 3 sistema aut\u00F4nomo 2.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C37DA169-1A66-4751-85F1-BCB9DDD7E936}|PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0.csproj|C:\\Users\\cetad\\Downloads\\PI 3 Sistema Aut\u00F4nomo 2.0\\pi 3 sistema aut\u00F4nomo 2.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C37DA169-1A66-4751-85F1-BCB9DDD7E936}|PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0.csproj|solutionrelative:pi 3 sistema aut\u00F4nomo 2.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C37DA169-1A66-4751-85F1-BCB9DDD7E936}|PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0.csproj|c:\\users\\cetad\\downloads\\pi 3 sistema aut\u00F4nomo 2.0 - main\\pi-3-sistema-autonomo\\pi 3 sistema aut\u00F4nomo 2.0\\pi 3 sistema aut\u00F4nomo 2.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C37DA169-1A66-4751-85F1-BCB9DDD7E936}|PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0.csproj|solutionrelative:pi 3 sistema aut\u00F4nomo 2.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,17 +18,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\cetad\\Downloads\\PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\cetad\\Downloads\\PI 3 Sistema Aut\u00F4nomo 2.0 - main\\PI-3-Sistema-Autonomo\\PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0\\Form1.cs",
               "RelativeDocumentMoniker": "PI 3 Sistema Aut\u00F4nomo 2.0\\Form1.cs",
-              "ToolTip": "C:\\Users\\cetad\\Downloads\\PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0\\Form1.cs",
+              "ToolTip": "C:\\Users\\cetad\\Downloads\\PI 3 Sistema Aut\u00F4nomo 2.0 - main\\PI-3-Sistema-Autonomo\\PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0\\Form1.cs",
               "RelativeToolTip": "PI 3 Sistema Aut\u00F4nomo 2.0\\Form1.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAAAJQAAABVAAAAAAAAAA==",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAswBwBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-19T00:04:38.977Z",
               "IsPinned": true,
@@ -40,11 +40,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\cetad\\Downloads\\PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\cetad\\Downloads\\PI 3 Sistema Aut\u00F4nomo 2.0 - main\\PI-3-Sistema-Autonomo\\PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0\\Form1.cs",
               "RelativeDocumentMoniker": "PI 3 Sistema Aut\u00F4nomo 2.0\\Form1.cs",
-              "ToolTip": "C:\\Users\\cetad\\Downloads\\PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\cetad\\Downloads\\PI 3 Sistema Aut\u00F4nomo 2.0 - main\\PI-3-Sistema-Autonomo\\PI 3 Sistema Aut\u00F4nomo 2.0\\PI 3 Sistema Aut\u00F4nomo 2.0\\Form1.cs [Design]",
               "RelativeToolTip": "PI 3 Sistema Aut\u00F4nomo 2.0\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-19T00:04:02.83Z",
