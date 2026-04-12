@@ -55,11 +55,30 @@
             this.btnJogar = new System.Windows.Forms.Button();
             this.txtCercado = new System.Windows.Forms.TextBox();
             this.lblCercado = new System.Windows.Forms.Label();
+            this.picTabuleiro = new System.Windows.Forms.PictureBox();
+            this.flowFlorestaIgualdade = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowCampinaDiferenca = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowMataTripla = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowIlhaSolitaria = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowPradariaAmor = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowReiSelva = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowMao = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblSenhaPartida = new System.Windows.Forms.Label();
+            this.IDPartida = new System.Windows.Forms.Label();
+            this.lblNomeJogador = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblIDJogadorAtual = new System.Windows.Forms.Label();
+            this.lblSenhaDoJogadorAtual = new System.Windows.Forms.Label();
+            this.lstHistorico = new System.Windows.Forms.ListBox();
+            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.lblHistorico = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.picTabuleiro)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(520, 50);
+            this.button1.Location = new System.Drawing.Point(865, 50);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 44);
             this.button1.TabIndex = 0;
@@ -70,7 +89,7 @@
             // lstDadosPartida
             // 
             this.lstDadosPartida.FormattingEnabled = true;
-            this.lstDadosPartida.Location = new System.Drawing.Point(637, 50);
+            this.lstDadosPartida.Location = new System.Drawing.Point(1040, 50);
             this.lstDadosPartida.Name = "lstDadosPartida";
             this.lstDadosPartida.Size = new System.Drawing.Size(129, 147);
             this.lstDadosPartida.TabIndex = 1;
@@ -79,7 +98,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(554, 162);
+            this.lblID.Location = new System.Drawing.Point(910, 171);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(35, 13);
             this.lblID.TabIndex = 2;
@@ -97,7 +116,7 @@
             // lblDataDaPartida
             // 
             this.lblDataDaPartida.AutoSize = true;
-            this.lblDataDaPartida.Location = new System.Drawing.Point(554, 117);
+            this.lblDataDaPartida.Location = new System.Drawing.Point(910, 124);
             this.lblDataDaPartida.Name = "lblDataDaPartida";
             this.lblDataDaPartida.Size = new System.Drawing.Size(35, 13);
             this.lblDataDaPartida.TabIndex = 4;
@@ -113,7 +132,7 @@
             // lstListadePartidas
             // 
             this.lstListadePartidas.FormattingEnabled = true;
-            this.lstListadePartidas.Location = new System.Drawing.Point(394, 50);
+            this.lstListadePartidas.Location = new System.Drawing.Point(717, 50);
             this.lstListadePartidas.Name = "lstListadePartidas";
             this.lstListadePartidas.Size = new System.Drawing.Size(120, 147);
             this.lstListadePartidas.TabIndex = 6;
@@ -186,7 +205,7 @@
             // lblSenhaJogador
             // 
             this.lblSenhaJogador.AutoSize = true;
-            this.lblSenhaJogador.Location = new System.Drawing.Point(281, 281);
+            this.lblSenhaJogador.Location = new System.Drawing.Point(316, 281);
             this.lblSenhaJogador.Name = "lblSenhaJogador";
             this.lblSenhaJogador.Size = new System.Drawing.Size(94, 13);
             this.lblSenhaJogador.TabIndex = 16;
@@ -205,7 +224,7 @@
             // lbl4
             // 
             this.lbl4.AutoSize = true;
-            this.lbl4.Location = new System.Drawing.Point(726, 386);
+            this.lbl4.Location = new System.Drawing.Point(1129, 627);
             this.lbl4.Name = "lbl4";
             this.lbl4.Size = new System.Drawing.Size(40, 13);
             this.lbl4.TabIndex = 18;
@@ -249,7 +268,7 @@
             // lblDado
             // 
             this.lblDado.AutoSize = true;
-            this.lblDado.Location = new System.Drawing.Point(624, 315);
+            this.lblDado.Location = new System.Drawing.Point(597, 315);
             this.lblDado.Name = "lblDado";
             this.lblDado.Size = new System.Drawing.Size(119, 13);
             this.lblDado.TabIndex = 23;
@@ -289,11 +308,183 @@
             this.lblCercado.TabIndex = 27;
             this.lblCercado.Text = "Cercado:";
             // 
+            // picTabuleiro
+            // 
+            this.picTabuleiro.Image = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.Tabuleiro;
+            this.picTabuleiro.Location = new System.Drawing.Point(771, 241);
+            this.picTabuleiro.Name = "picTabuleiro";
+            this.picTabuleiro.Size = new System.Drawing.Size(380, 353);
+            this.picTabuleiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTabuleiro.TabIndex = 28;
+            this.picTabuleiro.TabStop = false;
+            // 
+            // flowFlorestaIgualdade
+            // 
+            this.flowFlorestaIgualdade.BackColor = System.Drawing.Color.Transparent;
+            this.flowFlorestaIgualdade.Location = new System.Drawing.Point(790, 252);
+            this.flowFlorestaIgualdade.Name = "flowFlorestaIgualdade";
+            this.flowFlorestaIgualdade.Size = new System.Drawing.Size(105, 64);
+            this.flowFlorestaIgualdade.TabIndex = 29;
+            // 
+            // flowCampinaDiferenca
+            // 
+            this.flowCampinaDiferenca.BackColor = System.Drawing.Color.Transparent;
+            this.flowCampinaDiferenca.Location = new System.Drawing.Point(1011, 374);
+            this.flowCampinaDiferenca.Name = "flowCampinaDiferenca";
+            this.flowCampinaDiferenca.Size = new System.Drawing.Size(114, 57);
+            this.flowCampinaDiferenca.TabIndex = 30;
+            // 
+            // flowMataTripla
+            // 
+            this.flowMataTripla.Location = new System.Drawing.Point(790, 363);
+            this.flowMataTripla.Name = "flowMataTripla";
+            this.flowMataTripla.Size = new System.Drawing.Size(105, 68);
+            this.flowMataTripla.TabIndex = 31;
+            // 
+            // flowIlhaSolitaria
+            // 
+            this.flowIlhaSolitaria.BackColor = System.Drawing.Color.Transparent;
+            this.flowIlhaSolitaria.Location = new System.Drawing.Point(1067, 476);
+            this.flowIlhaSolitaria.Name = "flowIlhaSolitaria";
+            this.flowIlhaSolitaria.Size = new System.Drawing.Size(68, 42);
+            this.flowIlhaSolitaria.TabIndex = 32;
+            // 
+            // flowPradariaAmor
+            // 
+            this.flowPradariaAmor.BackColor = System.Drawing.Color.Transparent;
+            this.flowPradariaAmor.Location = new System.Drawing.Point(802, 476);
+            this.flowPradariaAmor.Name = "flowPradariaAmor";
+            this.flowPradariaAmor.Size = new System.Drawing.Size(93, 63);
+            this.flowPradariaAmor.TabIndex = 33;
+            // 
+            // flowReiSelva
+            // 
+            this.flowReiSelva.BackColor = System.Drawing.Color.Transparent;
+            this.flowReiSelva.Location = new System.Drawing.Point(1029, 259);
+            this.flowReiSelva.Name = "flowReiSelva";
+            this.flowReiSelva.Size = new System.Drawing.Size(51, 35);
+            this.flowReiSelva.TabIndex = 34;
+            // 
+            // flowMao
+            // 
+            this.flowMao.Location = new System.Drawing.Point(273, 526);
+            this.flowMao.Name = "flowMao";
+            this.flowMao.Size = new System.Drawing.Size(200, 100);
+            this.flowMao.TabIndex = 35;
+            // 
+            // lblSenhaPartida
+            // 
+            this.lblSenhaPartida.AutoSize = true;
+            this.lblSenhaPartida.Location = new System.Drawing.Point(12, 77);
+            this.lblSenhaPartida.Name = "lblSenhaPartida";
+            this.lblSenhaPartida.Size = new System.Drawing.Size(92, 13);
+            this.lblSenhaPartida.TabIndex = 36;
+            this.lblSenhaPartida.Text = "Senha da Partida:";
+            // 
+            // IDPartida
+            // 
+            this.IDPartida.AutoSize = true;
+            this.IDPartida.Location = new System.Drawing.Point(29, 120);
+            this.IDPartida.Name = "IDPartida";
+            this.IDPartida.Size = new System.Drawing.Size(72, 13);
+            this.IDPartida.TabIndex = 37;
+            this.IDPartida.Text = "ID da Partida:";
+            // 
+            // lblNomeJogador
+            // 
+            this.lblNomeJogador.AutoSize = true;
+            this.lblNomeJogador.Location = new System.Drawing.Point(7, 255);
+            this.lblNomeJogador.Name = "lblNomeJogador";
+            this.lblNomeJogador.Size = new System.Drawing.Size(94, 13);
+            this.lblNomeJogador.TabIndex = 38;
+            this.lblNomeJogador.Text = "Nome do Jogador:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 291);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Senha da Partida:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 330);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "ID da Partida:";
+            // 
+            // lblIDJogadorAtual
+            // 
+            this.lblIDJogadorAtual.AutoSize = true;
+            this.lblIDJogadorAtual.Location = new System.Drawing.Point(213, 252);
+            this.lblIDJogadorAtual.Name = "lblIDJogadorAtual";
+            this.lblIDJogadorAtual.Size = new System.Drawing.Size(62, 13);
+            this.lblIDJogadorAtual.TabIndex = 41;
+            this.lblIDJogadorAtual.Text = "ID Jogador:";
+            // 
+            // lblSenhaDoJogadorAtual
+            // 
+            this.lblSenhaDoJogadorAtual.AutoSize = true;
+            this.lblSenhaDoJogadorAtual.Location = new System.Drawing.Point(213, 281);
+            this.lblSenhaDoJogadorAtual.Name = "lblSenhaDoJogadorAtual";
+            this.lblSenhaDoJogadorAtual.Size = new System.Drawing.Size(97, 13);
+            this.lblSenhaDoJogadorAtual.TabIndex = 42;
+            this.lblSenhaDoJogadorAtual.Text = "Senha do Jogador:";
+            // 
+            // lstHistorico
+            // 
+            this.lstHistorico.FormattingEnabled = true;
+            this.lstHistorico.Location = new System.Drawing.Point(605, 476);
+            this.lstHistorico.Name = "lstHistorico";
+            this.lstHistorico.Size = new System.Drawing.Size(120, 95);
+            this.lstHistorico.TabIndex = 43;
+            // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.Location = new System.Drawing.Point(620, 598);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(122, 42);
+            this.btnAtualizar.TabIndex = 44;
+            this.btnAtualizar.Text = "Atualizar Turno";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            // 
+            // lblHistorico
+            // 
+            this.lblHistorico.AutoSize = true;
+            this.lblHistorico.Location = new System.Drawing.Point(504, 476);
+            this.lblHistorico.Name = "lblHistorico";
+            this.lblHistorico.Size = new System.Drawing.Size(95, 13);
+            this.lblHistorico.TabIndex = 45;
+            this.lblHistorico.Text = "Histórico do Jogo: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1205, 692);
+            this.Controls.Add(this.lblHistorico);
+            this.Controls.Add(this.btnAtualizar);
+            this.Controls.Add(this.lstHistorico);
+            this.Controls.Add(this.lblSenhaDoJogadorAtual);
+            this.Controls.Add(this.lblIDJogadorAtual);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblNomeJogador);
+            this.Controls.Add(this.IDPartida);
+            this.Controls.Add(this.lblSenhaPartida);
+            this.Controls.Add(this.flowMao);
+            this.Controls.Add(this.flowReiSelva);
+            this.Controls.Add(this.flowPradariaAmor);
+            this.Controls.Add(this.flowIlhaSolitaria);
+            this.Controls.Add(this.flowMataTripla);
+            this.Controls.Add(this.flowCampinaDiferenca);
+            this.Controls.Add(this.flowFlorestaIgualdade);
+            this.Controls.Add(this.picTabuleiro);
             this.Controls.Add(this.lblCercado);
             this.Controls.Add(this.txtCercado);
             this.Controls.Add(this.btnJogar);
@@ -323,6 +514,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.picTabuleiro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,6 +549,24 @@
         private System.Windows.Forms.Button btnJogar;
         private System.Windows.Forms.TextBox txtCercado;
         private System.Windows.Forms.Label lblCercado;
+        private System.Windows.Forms.PictureBox picTabuleiro;
+        private System.Windows.Forms.FlowLayoutPanel flowFlorestaIgualdade;
+        private System.Windows.Forms.FlowLayoutPanel flowCampinaDiferenca;
+        private System.Windows.Forms.FlowLayoutPanel flowMataTripla;
+        private System.Windows.Forms.FlowLayoutPanel flowIlhaSolitaria;
+        private System.Windows.Forms.FlowLayoutPanel flowPradariaAmor;
+        private System.Windows.Forms.FlowLayoutPanel flowReiSelva;
+        private System.Windows.Forms.FlowLayoutPanel flowMao;
+        private System.Windows.Forms.Label lblSenhaPartida;
+        private System.Windows.Forms.Label IDPartida;
+        private System.Windows.Forms.Label lblNomeJogador;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblIDJogadorAtual;
+        private System.Windows.Forms.Label lblSenhaDoJogadorAtual;
+        private System.Windows.Forms.ListBox lstHistorico;
+        private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.Label lblHistorico;
     }
 }
 

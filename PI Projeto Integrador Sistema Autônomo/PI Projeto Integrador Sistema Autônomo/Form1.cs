@@ -16,6 +16,11 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
         string idJogadorSalvo = "";
         string senhaJogadorSalvo = "";
         int idPartidaSalvo = 0;
+        string dinoSelecionado = "";
+        string ultimoTurno = "";
+        string ultimoJogador = "";
+        string ultimoDado = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -70,8 +75,6 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
             {
                 lstDadosPartida.Items.Add(jogadores[i]);
             }
-
-
         }
 
         private void btnCriarPartida_Click(object sender, EventArgs e)
@@ -91,9 +94,7 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
 
             string retorno = Jogo.CriarPartida(nome, senha, grupo);
 
-
-
-            if (retorno.Substring(0, 4) == "ERRO")
+            if (retorno.StartsWith("ERRO"))
             {
                 MessageBox.Show("Erro:\n" + retorno.Substring(5));
                 return;
@@ -154,6 +155,10 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
             lblIdJogador.Text = idJogadorSalvo;
             lblSenhaJogador.Text = senhaJogadorSalvo;
 
+            AtualizarTurno();
+            MostrarMao();
+            MostrarCercados();
+
             MessageBox.Show("Jogador entrou na partida!");
         }
 
@@ -182,34 +187,41 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
             MostrarCercados();
         }
 
+        void SelecionarDino(object sender, EventArgs e)
+        {
+            PictureBox pb = (PictureBox)sender;
+
+            dinoSelecionado = pb.Tag.ToString();
+
+            MessageBox.Show("Dino selecionado: " + dinoSelecionado);
+        }
+
         void MostrarMao()
         {
-            if (idJogadorSalvo == "" || senhaJogadorSalvo == "")
-            {
-                MessageBox.Show("Entre na partida primeiro!");
-                return;
-            }
+            flowMao.Controls.Clear();
 
             int idJogador = Convert.ToInt32(idJogadorSalvo);
 
             string retorno = Jogo.ExibirMao(idJogador, senhaJogadorSalvo);
 
-            if (retorno.StartsWith("ERRO"))
-            {
-                MessageBox.Show(retorno);
-                return;
-            }
-
             retorno = retorno.Replace("\r", "");
-
             string[] dinos = retorno.Split('\n');
-
-            lstMaoJogador.Items.Clear();
 
             foreach (string d in dinos)
             {
                 if (d.Trim() != "")
-                    lstMaoJogador.Items.Add(d);
+                {
+                    PictureBox pb = new PictureBox();
+                    pb.Width = 50;
+                    pb.Height = 50;
+                    pb.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    pb.Image = PegarImagemDino(d);
+                    pb.Tag = d;
+                    pb.Click += SelecionarDino;
+
+                    flowMao.Controls.Add(pb);
+                }
             }
         }
 
@@ -225,8 +237,6 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
                 return;
             }
 
-            // esperado: turno,nomeJogador,dado
-
             string[] dados = retorno.Split(',');
 
             if (dados.Length < 3)
@@ -239,7 +249,6 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
             string idJogadorDaVez = dados[1];
             string dado = dados[2];
 
-            // 🔥 AGORA PEGAR NOME DO JOGADOR
             string lista = Jogo.ListarJogadores(idPartidaSalvo);
 
             lista = lista.Replace("\r", "");
@@ -261,51 +270,89 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
                 }
             }
 
+            if (turno != ultimoTurno || idJogadorDaVez != ultimoJogador || dado != ultimoDado)
+            {
+                MessageBox.Show("Novo turno!\nJogador: " + nomeJogador + "\nDado: " + dado);
+
+                lstHistorico.Items.Add("Turno " + turno + " - " + nomeJogador + " (" + dado + ")");
+
+                MostrarMao();
+                MostrarCercados();
+            }
+
             lblTurno.Text = "Turno: " + turno;
             lblJogadorDaVez.Text = "Jogador: " + nomeJogador;
             lblDado.Text = "Dado: " + dado;
+
+            ultimoTurno = turno;
+            ultimoJogador = idJogadorDaVez;
+            ultimoDado = dado;
+        }
+
+        void AdicionarDino(FlowLayoutPanel panel, string dino)
+        {
+            PictureBox pb = new PictureBox();
+            pb.Width = 40;
+            pb.Height = 40;
+            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            pb.Image = PegarImagemDino(dino);
+
+            panel.Controls.Add(pb);
         }
 
         void MostrarCercados()
         {
+            flowCampinaDiferenca.Controls.Clear();
+            flowFlorestaIgualdade.Controls.Clear();
+            flowIlhaSolitaria.Controls.Clear();
+            flowMataTripla.Controls.Clear();
+            flowReiSelva.Controls.Clear();
+            flowPradariaAmor.Controls.Clear();
+
             int idJogador = Convert.ToInt32(idJogadorSalvo);
 
             string retorno = Jogo.ListarCercados();
 
-            if (retorno.StartsWith("ERRO"))
-            {
-                MessageBox.Show(retorno);
-                return;
-            }
-
             retorno = retorno.Replace("\r", "");
-
             string[] linhas = retorno.Split('\n');
-
-            lstCercados.Items.Clear();
 
             foreach (string l in linhas)
             {
-                if (l.Trim() != "")
-                    lstCercados.Items.Add(l);
+                if (l.Trim() == "") continue;
+
+                string[] partes = l.Split(',');
+
+                if (partes.Length < 2) continue;
+
+                string cercado = partes[0];
+                string dino = partes[1];
+
+                if (cercado == "CD")
+                    AdicionarDino(flowCampinaDiferenca, dino);
+                else if (cercado == "FI")
+                    AdicionarDino(flowFlorestaIgualdade, dino);
+                else if (cercado == "IS")
+                    AdicionarDino(flowIlhaSolitaria, dino);
+                else if (cercado == "MT")
+                    AdicionarDino(flowMataTripla, dino);
+                else if (cercado == "RS")
+                    AdicionarDino(flowReiSelva, dino);
+                else if (cercado == "PA")
+                    AdicionarDino(flowPradariaAmor, dino);
             }
         }
 
-
-
-        private void lstMaoJogador_SelectedIndexChanged(object sender, EventArgs e) { }
-
         private void btnJogar_Click(object sender, EventArgs e)
         {
-            if (lstMaoJogador.SelectedItem == null)
+            if (dinoSelecionado == "")
             {
                 MessageBox.Show("Selecione um dinossauro!");
                 return;
             }
 
-            string item = lstMaoJogador.SelectedItem.ToString();
-            string dinoId = item.Split(',')[0];
-            string dinoNome = item.Split(',')[1];
+            string dinoId = dinoSelecionado.Split(',')[0];
+            string dinoNome = dinoSelecionado.Split(',')[1];
 
             if (lblDado.Text.Contains("Carn") && !dinoNome.Contains("Carn"))
             {
@@ -326,9 +373,44 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
 
             MessageBox.Show("Jogada realizada!");
 
-            MostrarMao();
+            System.Threading.Thread.Sleep(500);
+
+            dinoSelecionado = "";
+            txtCercado.Clear();
+
             AtualizarTurno();
+            MostrarMao();
             MostrarCercados();
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            AtualizarTurno();
+            MostrarMao();
+            MostrarCercados();
+        }
+
+        Image PegarImagemDino(string codigo)
+        {
+            if (codigo.StartsWith("Br"))
+                return Image.FromFile("Images/braquiossauro.png");
+
+            if (codigo.StartsWith("Tr"))
+                return Image.FromFile("Images/triceratops.png");
+
+            if (codigo.StartsWith("Ti"))
+                return Image.FromFile("Images/tiranossauro.png");
+
+            if (codigo.StartsWith("Et"))
+                return Image.FromFile("Images/estegossauro.png");
+
+            if (codigo.StartsWith("Pa"))
+                return Image.FromFile("Images/parasaurolofo.png");
+
+            if (codigo.StartsWith("Ep"))
+                return Image.FromFile("Images/espinossauro.png");
+
+            return null;
         }
 
         private void lstListadePartidas_SelectedIndexChanged(object sender, EventArgs e)
