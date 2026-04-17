@@ -55,7 +55,6 @@
             this.btnJogar = new System.Windows.Forms.Button();
             this.txtCercado = new System.Windows.Forms.TextBox();
             this.lblCercado = new System.Windows.Forms.Label();
-            this.picTabuleiro = new System.Windows.Forms.PictureBox();
             this.flowFlorestaIgualdade = new System.Windows.Forms.FlowLayoutPanel();
             this.flowCampinaDiferenca = new System.Windows.Forms.FlowLayoutPanel();
             this.flowMataTripla = new System.Windows.Forms.FlowLayoutPanel();
@@ -73,6 +72,13 @@
             this.lstHistorico = new System.Windows.Forms.ListBox();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.lblHistorico = new System.Windows.Forms.Label();
+            this.pnlTriceratops = new System.Windows.Forms.Panel();
+            this.pnlEstegossauro = new System.Windows.Forms.Panel();
+            this.pnlParasaurolofo = new System.Windows.Forms.Panel();
+            this.pnlEspinossauro = new System.Windows.Forms.Panel();
+            this.pnlBraquiossauro = new System.Windows.Forms.Panel();
+            this.pnlTiranossauro = new System.Windows.Forms.Panel();
+            this.picTabuleiro = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picTabuleiro)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,9 +106,9 @@
             this.lblID.AutoSize = true;
             this.lblID.Location = new System.Drawing.Point(910, 171);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(35, 13);
+            this.lblID.Size = new System.Drawing.Size(68, 13);
             this.lblID.TabIndex = 2;
-            this.lblID.Text = "label1";
+            this.lblID.Text = "ID da partida";
             // 
             // lblNomeDaPartida
             // 
@@ -118,9 +124,9 @@
             this.lblDataDaPartida.AutoSize = true;
             this.lblDataDaPartida.Location = new System.Drawing.Point(910, 124);
             this.lblDataDaPartida.Name = "lblDataDaPartida";
-            this.lblDataDaPartida.Size = new System.Drawing.Size(35, 13);
+            this.lblDataDaPartida.Size = new System.Drawing.Size(80, 13);
             this.lblDataDaPartida.TabIndex = 4;
-            this.lblDataDaPartida.Text = "label1";
+            this.lblDataDaPartida.Text = "Data da partida";
             // 
             // txtGrupo
             // 
@@ -308,16 +314,6 @@
             this.lblCercado.TabIndex = 27;
             this.lblCercado.Text = "Cercado:";
             // 
-            // picTabuleiro
-            // 
-            this.picTabuleiro.Image = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.Tabuleiro;
-            this.picTabuleiro.Location = new System.Drawing.Point(771, 241);
-            this.picTabuleiro.Name = "picTabuleiro";
-            this.picTabuleiro.Size = new System.Drawing.Size(380, 353);
-            this.picTabuleiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTabuleiro.TabIndex = 28;
-            this.picTabuleiro.TabStop = false;
-            // 
             // flowFlorestaIgualdade
             // 
             this.flowFlorestaIgualdade.BackColor = System.Drawing.Color.Transparent;
@@ -367,9 +363,9 @@
             // 
             // flowMao
             // 
-            this.flowMao.Location = new System.Drawing.Point(273, 526);
+            this.flowMao.Location = new System.Drawing.Point(15, 540);
             this.flowMao.Name = "flowMao";
-            this.flowMao.Size = new System.Drawing.Size(200, 100);
+            this.flowMao.Size = new System.Drawing.Size(147, 100);
             this.flowMao.TabIndex = 35;
             // 
             // lblSenhaPartida
@@ -445,7 +441,7 @@
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(620, 598);
+            this.btnAtualizar.Location = new System.Drawing.Point(590, 598);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(122, 42);
             this.btnAtualizar.TabIndex = 44;
@@ -462,11 +458,87 @@
             this.lblHistorico.TabIndex = 45;
             this.lblHistorico.Text = "Histórico do Jogo: ";
             // 
+            // pnlTriceratops
+            // 
+            this.pnlTriceratops.BackColor = System.Drawing.Color.Transparent;
+            this.pnlTriceratops.BackgroundImage = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.triceratops;
+            this.pnlTriceratops.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlTriceratops.Location = new System.Drawing.Point(376, 540);
+            this.pnlTriceratops.Name = "pnlTriceratops";
+            this.pnlTriceratops.Size = new System.Drawing.Size(60, 55);
+            this.pnlTriceratops.TabIndex = 50;
+            // 
+            // pnlEstegossauro
+            // 
+            this.pnlEstegossauro.BackColor = System.Drawing.Color.Transparent;
+            this.pnlEstegossauro.BackgroundImage = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.estegossauro;
+            this.pnlEstegossauro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlEstegossauro.Location = new System.Drawing.Point(215, 540);
+            this.pnlEstegossauro.Name = "pnlEstegossauro";
+            this.pnlEstegossauro.Size = new System.Drawing.Size(48, 55);
+            this.pnlEstegossauro.TabIndex = 48;
+            // 
+            // pnlParasaurolofo
+            // 
+            this.pnlParasaurolofo.BackColor = System.Drawing.Color.Transparent;
+            this.pnlParasaurolofo.BackgroundImage = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.parasaurolofo;
+            this.pnlParasaurolofo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlParasaurolofo.Location = new System.Drawing.Point(284, 540);
+            this.pnlParasaurolofo.Name = "pnlParasaurolofo";
+            this.pnlParasaurolofo.Size = new System.Drawing.Size(60, 55);
+            this.pnlParasaurolofo.TabIndex = 49;
+            // 
+            // pnlEspinossauro
+            // 
+            this.pnlEspinossauro.BackColor = System.Drawing.Color.Transparent;
+            this.pnlEspinossauro.BackgroundImage = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.espinossauro;
+            this.pnlEspinossauro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlEspinossauro.Location = new System.Drawing.Point(376, 463);
+            this.pnlEspinossauro.Name = "pnlEspinossauro";
+            this.pnlEspinossauro.Size = new System.Drawing.Size(60, 55);
+            this.pnlEspinossauro.TabIndex = 51;
+            // 
+            // pnlBraquiossauro
+            // 
+            this.pnlBraquiossauro.BackColor = System.Drawing.Color.Transparent;
+            this.pnlBraquiossauro.BackgroundImage = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.braquiossauro;
+            this.pnlBraquiossauro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlBraquiossauro.Location = new System.Drawing.Point(284, 463);
+            this.pnlBraquiossauro.Name = "pnlBraquiossauro";
+            this.pnlBraquiossauro.Size = new System.Drawing.Size(60, 55);
+            this.pnlBraquiossauro.TabIndex = 47;
+            // 
+            // pnlTiranossauro
+            // 
+            this.pnlTiranossauro.BackColor = System.Drawing.Color.Transparent;
+            this.pnlTiranossauro.BackgroundImage = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.tiranossauro;
+            this.pnlTiranossauro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlTiranossauro.Location = new System.Drawing.Point(216, 460);
+            this.pnlTiranossauro.Name = "pnlTiranossauro";
+            this.pnlTiranossauro.Size = new System.Drawing.Size(47, 58);
+            this.pnlTiranossauro.TabIndex = 46;
+            // 
+            // picTabuleiro
+            // 
+            this.picTabuleiro.Image = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.Tabuleiro;
+            this.picTabuleiro.Location = new System.Drawing.Point(748, 222);
+            this.picTabuleiro.Name = "picTabuleiro";
+            this.picTabuleiro.Size = new System.Drawing.Size(431, 390);
+            this.picTabuleiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTabuleiro.TabIndex = 28;
+            this.picTabuleiro.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1205, 692);
+            this.Controls.Add(this.pnlEstegossauro);
+            this.Controls.Add(this.pnlParasaurolofo);
+            this.Controls.Add(this.pnlTriceratops);
+            this.Controls.Add(this.pnlEspinossauro);
+            this.Controls.Add(this.pnlBraquiossauro);
+            this.Controls.Add(this.pnlTiranossauro);
             this.Controls.Add(this.lblHistorico);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.lstHistorico);
@@ -567,6 +639,12 @@
         private System.Windows.Forms.ListBox lstHistorico;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Label lblHistorico;
+        private System.Windows.Forms.Panel pnlTiranossauro;
+        private System.Windows.Forms.Panel pnlBraquiossauro;
+        private System.Windows.Forms.Panel pnlEstegossauro;
+        private System.Windows.Forms.Panel pnlParasaurolofo;
+        private System.Windows.Forms.Panel pnlTriceratops;
+        private System.Windows.Forms.Panel pnlEspinossauro;
     }
 }
 

@@ -11,3 +11,16 @@ C:\Users\Gabriel Dourado\source\repos\PI Projeto Integrador Sistema Autônomo\PI
 C:\Users\Gabriel Dourado\source\repos\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\obj\Debug\PI Proje.88F47093.Up2Date
 C:\Users\Gabriel Dourado\source\repos\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\obj\Debug\PI Projeto Integrador Sistema Autônomo.exe
 C:\Users\Gabriel Dourado\source\repos\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\obj\Debug\PI Projeto Integrador Sistema Autônomo.pdb
+C:\Users\gabriel.ldourado\Downloads\PI-3-Sistema-Autonomo\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\bin\Debug\PI Projeto Integrador Sistema Autônomo.exe.config
+C:\Users\gabriel.ldourado\Downloads\PI-3-Sistema-Autonomo\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\bin\Debug\PI Projeto Integrador Sistema Autônomo.exe
+C:\Users\gabriel.ldourado\Downloads\PI-3-Sistema-Autonomo\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\bin\Debug\PI Projeto Integrador Sistema Autônomo.pdb
+C:\Users\gabriel.ldourado\Downloads\PI-3-Sistema-Autonomo\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\bin\Debug\DraftServer.dll
+C:\Users\gabriel.ldourado\Downloads\PI-3-Sistema-Autonomo\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\bin\Debug\DraftServer.xml
+C:\Users\gabriel.ldourado\Downloads\PI-3-Sistema-Autonomo\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\obj\Debug\PI Projeto Integrador Sistema Autônomo.csproj.AssemblyReference.cache
+C:\Users\gabriel.ldourado\Downloads\PI-3-Sistema-Autonomo\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\obj\Debug\PI_Projeto_Integrador_Sistema_Autônomo.Form1.resources
+C:\Users\gabriel.ldourado\Downloads\PI-3-Sistema-Autonomo\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\obj\Debug\PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.resources
+C:\Users\gabriel.ldourado\Downloads\PI-3-Sistema-Autonomo\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\obj\Debug\PI Projeto Integrador Sistema Autônomo.csproj.GenerateResource.cache
+C:\Users\gabriel.ldourado\Downloads\PI-3-Sistema-Autonomo\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\obj\Debug\PI Projeto Integrador Sistema Autônomo.csproj.CoreCompileInputs.cache
+C:\Users\gabriel.ldourado\Downloads\PI-3-Sistema-Autonomo\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\obj\Debug\PI Proje.88F47093.Up2Date
+C:\Users\gabriel.ldourado\Downloads\PI-3-Sistema-Autonomo\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\obj\Debug\PI Projeto Integrador Sistema Autônomo.exe
+C:\Users\gabriel.ldourado\Downloads\PI-3-Sistema-Autonomo\PI Projeto Integrador Sistema Autônomo\PI Projeto Integrador Sistema Autônomo\obj\Debug\PI Projeto Integrador Sistema Autônomo.pdb

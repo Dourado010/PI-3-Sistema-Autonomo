@@ -85,5 +85,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\tiranossauro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\braquiossauro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\espinossauro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\estegossauro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\parasaurolofo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\triceratops.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

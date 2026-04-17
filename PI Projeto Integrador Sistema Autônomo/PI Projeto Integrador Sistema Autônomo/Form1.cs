@@ -365,6 +365,21 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
 
             string retorno = Jogo.Jogar(idJogador, senhaJogadorSalvo, dinoId, cercado);
 
+
+            pnlTiranossauro.Left = pnlTiranossauro.Left + 100;
+            pnlTiranossauro.Top = pnlTiranossauro.Top + 100;
+            pnlBraquiossauro.Top = pnlTiranossauro.Top + 100;
+            pnlBraquiossauro.Left = pnlTiranossauro.Left + 100;
+            pnlEspinossauro.Top = pnlTiranossauro.Top + 100;
+            pnlEspinossauro.Left = pnlTiranossauro.Left + 100;
+            pnlEstegossauro.Top = pnlTiranossauro.Top + 100;
+            pnlEstegossauro.Left = pnlTiranossauro.Left + 100;
+            pnlParasaurolofo.Top = pnlTiranossauro.Top + 100;
+            pnlParasaurolofo.Left = pnlTiranossauro.Left + 100;
+            pnlTriceratops.Left = pnlTiranossauro.Left + 100;
+            pnlTriceratops.Top = pnlTiranossauro.Top + 100;
+
+
             if (retorno.StartsWith("ERRO"))
             {
                 MessageBox.Show(retorno);
