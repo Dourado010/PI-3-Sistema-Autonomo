@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.lstDadosPartida = new System.Windows.Forms.ListBox();
             this.lblID = new System.Windows.Forms.Label();
@@ -79,6 +80,7 @@
             this.pnlBraquiossauro = new System.Windows.Forms.Panel();
             this.pnlTiranossauro = new System.Windows.Forms.Panel();
             this.picTabuleiro = new System.Windows.Forms.PictureBox();
+            this.tmrVerificarPartidas = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picTabuleiro)).BeginInit();
             this.SuspendLayout();
             // 
@@ -528,6 +530,11 @@
             this.picTabuleiro.TabIndex = 28;
             this.picTabuleiro.TabStop = false;
             // 
+            // tmrVerificarPartidas
+            // 
+            this.tmrVerificarPartidas.Interval = 5000;
+            this.tmrVerificarPartidas.Tick += new System.EventHandler(this.tmrVerificarPartidas_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -645,6 +652,7 @@
         private System.Windows.Forms.Panel pnlParasaurolofo;
         private System.Windows.Forms.Panel pnlTriceratops;
         private System.Windows.Forms.Panel pnlEspinossauro;
+        private System.Windows.Forms.Timer tmrVerificarPartidas;
     }
 }
 

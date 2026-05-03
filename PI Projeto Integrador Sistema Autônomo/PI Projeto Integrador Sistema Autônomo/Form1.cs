@@ -20,17 +20,20 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
         string ultimoTurno = "";
         string ultimoJogador = "";
         string ultimoDado = "";
+        bool partidaIniciada = false; // FLAG PRA SABER SE A PARTIDA JÁ COMEÇOU
 
         public Form1()
         {
             InitializeComponent();
+            tmrVerificarPartidas.Enabled = true;
             lbl4.Text = Jogo.versao;
 
             txtGrupo.ReadOnly = true;
             txtGrupo.TabStop = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        // MÉTODO PRINCIPAL QUE CARREGA A LISTA DE PARTIDAS
+        private void CarregarListaPartidas()
         {
             string retorno = Jogo.ListarPartidas("T");
 
@@ -44,6 +47,36 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
                 if (p.Trim() != "")
                     lstListadePartidas.Items.Add(p);
             }
+        }
+
+        // MÉTODO PARA ATUALIZAR A LISTA DE JOGADORES DA PARTIDA SELECIONADA
+        private void AtualizarListaJogadores()
+        {
+            if (lstListadePartidas.SelectedItem == null)
+                return;
+
+            string partida = lstListadePartidas.SelectedItem.ToString();
+            string[] dadosPartida = partida.Split(',');
+
+            int idPartida = Convert.ToInt32(dadosPartida[0]);
+
+            string retorno = Jogo.ListarJogadores(idPartida);
+
+            retorno = retorno.Replace("\r", "");
+            string[] jogadores = retorno.Split('\n');
+
+            lstDadosPartida.Items.Clear();
+
+            for (int i = 0; i < jogadores.Length - 1; i++)
+            {
+                if (jogadores[i].Trim() != "")
+                    lstDadosPartida.Items.Add(jogadores[i]);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CarregarListaPartidas();
         }
 
         private void lstDadosPartida_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,17 +97,7 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
 
             txtGrupo.Text = idPartida.ToString();
 
-            string retorno = Jogo.ListarJogadores(idPartida);
-
-            retorno = retorno.Replace("\r", "");
-            string[] jogadores = retorno.Split('\n');
-
-            lstDadosPartida.Items.Clear();
-
-            for (int i = 0; i < jogadores.Length - 1; i++)
-            {
-                lstDadosPartida.Items.Add(jogadores[i]);
-            }
+            AtualizarListaJogadores();
         }
 
         private void btnCriarPartida_Click(object sender, EventArgs e)
@@ -101,7 +124,7 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
             }
 
             MessageBox.Show("Partida criada com sucesso!");
-            button1_Click(null, null);
+            CarregarListaPartidas();
 
             txtNome.Clear();
             txtSenha.Clear();
@@ -155,10 +178,6 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
             lblIdJogador.Text = idJogadorSalvo;
             lblSenhaJogador.Text = senhaJogadorSalvo;
 
-            AtualizarTurno();
-            MostrarMao();
-            MostrarCercados();
-
             MessageBox.Show("Jogador entrou na partida!");
         }
 
@@ -181,6 +200,8 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
             }
 
             MessageBox.Show("Partida iniciada");
+
+            partidaIniciada = true; // MARCA QUE A PARTIDA COMEÇOU
 
             AtualizarTurno();
             MostrarMao();
@@ -227,13 +248,14 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
 
         void AtualizarTurno()
         {
-            int idJogador = Convert.ToInt32(idJogadorSalvo);
+            // SÓ ATUALIZA SE A PARTIDA FOI INICIADA
+            if (!partidaIniciada)
+                return;
 
             string retorno = Jogo.VerificarTurno(idPartidaSalvo);
 
             if (retorno.StartsWith("ERRO"))
             {
-                MessageBox.Show(retorno);
                 return;
             }
 
@@ -241,7 +263,6 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
 
             if (dados.Length < 3)
             {
-                MessageBox.Show("Retorno inesperado: " + retorno);
                 return;
             }
 
@@ -270,20 +291,35 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
                 }
             }
 
+            // VERIFICA SE HOUVE MUDANÇA NO TURNO OU DADO
             if (turno != ultimoTurno || idJogadorDaVez != ultimoJogador || dado != ultimoDado)
             {
-                MessageBox.Show("Novo turno!\nJogador: " + nomeJogador + "\nDado: " + dado);
+                // Adiciona no histórico
+                string mensagemHistorico = "Turno " + turno + " - " + nomeJogador + " rolou: " + dado;
+                lstHistorico.Items.Insert(0, mensagemHistorico);
 
-                lstHistorico.Items.Add("Turno " + turno + " - " + nomeJogador + " (" + dado + ")");
+                // Limita o histórico a 100 itens
+                while (lstHistorico.Items.Count > 100)
+                {
+                    lstHistorico.Items.RemoveAt(lstHistorico.Items.Count - 1);
+                }
+
+                // Mostra notificação
+                if (ultimoTurno != "")
+                {
+                    MessageBox.Show("Novo turno!\nJogador: " + nomeJogador + "\nDado: " + dado);
+                }
 
                 MostrarMao();
                 MostrarCercados();
             }
 
+            // ATUALIZA OS LABELS
             lblTurno.Text = "Turno: " + turno;
             lblJogadorDaVez.Text = "Jogador: " + nomeJogador;
             lblDado.Text = "Dado: " + dado;
 
+            // SALVA OS VALORES ATUAIS
             ultimoTurno = turno;
             ultimoJogador = idJogadorDaVez;
             ultimoDado = dado;
@@ -365,7 +401,6 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
 
             string retorno = Jogo.Jogar(idJogador, senhaJogadorSalvo, dinoId, cercado);
 
-
             pnlTiranossauro.Left = pnlTiranossauro.Left + 100;
             pnlTiranossauro.Top = pnlTiranossauro.Top + 100;
             pnlBraquiossauro.Top = pnlTiranossauro.Top + 100;
@@ -378,7 +413,6 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
             pnlParasaurolofo.Left = pnlTiranossauro.Left + 100;
             pnlTriceratops.Left = pnlTiranossauro.Left + 100;
             pnlTriceratops.Top = pnlTiranossauro.Top + 100;
-
 
             if (retorno.StartsWith("ERRO"))
             {
@@ -446,17 +480,33 @@ namespace PI_Projeto_Integrador_Sistema_Autônomo
 
             txtGrupo.Text = idPartida.ToString();
 
-            string retorno = Jogo.ListarJogadores(idPartida);
+            AtualizarListaJogadores();
+        }
 
-            retorno = retorno.Replace("\r", "");
-            string[] jogadores = retorno.Split('\n');
+        private void tmrVerificarPartidas_Tick(object sender, EventArgs e)
+        {
+            tmrVerificarPartidas.Enabled = false;
 
-            lstDadosPartida.Items.Clear();
-
-            for (int i = 0; i < jogadores.Length - 1; i++)
+            try
             {
-                lstDadosPartida.Items.Add(jogadores[i]);
+                // ATUALIZA A LISTA DE JOGADORES DA PARTIDA SELECIONADA
+                AtualizarListaJogadores();
+
+                // SÓ ATUALIZA O TURNO SE A PARTIDA JÁ FOI INICIADA
+                if (partidaIniciada && idPartidaSalvo != 0 && idJogadorSalvo != "")
+                {
+                    AtualizarTurno();
+                    MostrarMao();
+                    MostrarCercados();
+                }
             }
+            catch (Exception ex)
+            {
+                // Silencia erros
+                Console.WriteLine("Erro no timer: " + ex.Message);
+            }
+
+            tmrVerificarPartidas.Enabled = true;
         }
     }
 }
