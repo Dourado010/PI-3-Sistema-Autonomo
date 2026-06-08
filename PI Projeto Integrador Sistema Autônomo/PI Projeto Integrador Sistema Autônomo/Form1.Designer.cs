@@ -46,7 +46,7 @@
             this.lblIdJogador = new System.Windows.Forms.Label();
             this.lblSenhaJogador = new System.Windows.Forms.Label();
             this.btnIniciarPartida = new System.Windows.Forms.Button();
-            this.lbl4 = new System.Windows.Forms.Label();
+            this.lblVersao = new System.Windows.Forms.Label();
             this.lstMaoJogador = new System.Windows.Forms.ListBox();
             this.lblNossoGrupo = new System.Windows.Forms.Label();
             this.lblTurno = new System.Windows.Forms.Label();
@@ -229,14 +229,14 @@
             this.btnIniciarPartida.UseVisualStyleBackColor = true;
             this.btnIniciarPartida.Click += new System.EventHandler(this.btnIniciarPartida_Click);
             // 
-            // lbl4
+            // lblVersao
             // 
-            this.lbl4.AutoSize = true;
-            this.lbl4.Location = new System.Drawing.Point(1129, 627);
-            this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(40, 13);
-            this.lbl4.TabIndex = 18;
-            this.lbl4.Text = "Versão";
+            this.lblVersao.AutoSize = true;
+            this.lblVersao.Location = new System.Drawing.Point(1129, 627);
+            this.lblVersao.Name = "lblVersao";
+            this.lblVersao.Size = new System.Drawing.Size(40, 13);
+            this.lblVersao.TabIndex = 18;
+            this.lblVersao.Text = "Versão";
             // 
             // lstMaoJogador
             // 
@@ -298,7 +298,7 @@
             this.btnJogar.TabIndex = 25;
             this.btnJogar.Text = "Realizar Jogada";
             this.btnJogar.UseVisualStyleBackColor = true;
-            this.btnJogar.Click += new System.EventHandler(this.btnJogar_Click);
+            
             // 
             // txtCercado
             // 
@@ -449,7 +449,7 @@
             this.btnAtualizar.TabIndex = 44;
             this.btnAtualizar.Text = "Atualizar Turno";
             this.btnAtualizar.UseVisualStyleBackColor = true;
-            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            
             // 
             // lblHistorico
             // 
@@ -573,7 +573,7 @@
             this.Controls.Add(this.lblTurno);
             this.Controls.Add(this.lblNossoGrupo);
             this.Controls.Add(this.lstMaoJogador);
-            this.Controls.Add(this.lbl4);
+            this.Controls.Add(this.lblVersao);
             this.Controls.Add(this.btnIniciarPartida);
             this.Controls.Add(this.lblSenhaJogador);
             this.Controls.Add(this.lblIdJogador);
@@ -618,7 +618,7 @@
         private System.Windows.Forms.Label lblIdJogador;
         private System.Windows.Forms.Label lblSenhaJogador;
         private System.Windows.Forms.Button btnIniciarPartida;
-        private System.Windows.Forms.Label lbl4;
+        private System.Windows.Forms.Label lblVersao;
         private System.Windows.Forms.ListBox lstMaoJogador;
         private System.Windows.Forms.Label lblNossoGrupo;
         private System.Windows.Forms.Label lblTurno;
