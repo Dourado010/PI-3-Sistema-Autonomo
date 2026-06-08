@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnListarPartidas = new System.Windows.Forms.Button();
             this.lstDadosPartida = new System.Windows.Forms.ListBox();
             this.lblID = new System.Windows.Forms.Label();
             this.lblNomeDaPartida = new System.Windows.Forms.Label();
@@ -46,23 +46,12 @@
             this.lblIdJogador = new System.Windows.Forms.Label();
             this.lblSenhaJogador = new System.Windows.Forms.Label();
             this.btnIniciarPartida = new System.Windows.Forms.Button();
-            this.lbl4 = new System.Windows.Forms.Label();
+            this.lblVersao = new System.Windows.Forms.Label();
             this.lstMaoJogador = new System.Windows.Forms.ListBox();
             this.lblNossoGrupo = new System.Windows.Forms.Label();
             this.lblTurno = new System.Windows.Forms.Label();
             this.lblJogadorDaVez = new System.Windows.Forms.Label();
             this.lblDado = new System.Windows.Forms.Label();
-            this.lstCercados = new System.Windows.Forms.ListBox();
-            this.btnJogar = new System.Windows.Forms.Button();
-            this.txtCercado = new System.Windows.Forms.TextBox();
-            this.lblCercado = new System.Windows.Forms.Label();
-            this.flowFlorestaIgualdade = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowCampinaDiferenca = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowMataTripla = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowIlhaSolitaria = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowPradariaAmor = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowReiSelva = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowMao = new System.Windows.Forms.FlowLayoutPanel();
             this.lblSenhaPartida = new System.Windows.Forms.Label();
             this.IDPartida = new System.Windows.Forms.Label();
             this.lblNomeJogador = new System.Windows.Forms.Label();
@@ -71,28 +60,22 @@
             this.lblIDJogadorAtual = new System.Windows.Forms.Label();
             this.lblSenhaDoJogadorAtual = new System.Windows.Forms.Label();
             this.lstHistorico = new System.Windows.Forms.ListBox();
-            this.btnAtualizar = new System.Windows.Forms.Button();
             this.lblHistorico = new System.Windows.Forms.Label();
-            this.pnlTriceratops = new System.Windows.Forms.Panel();
-            this.pnlEstegossauro = new System.Windows.Forms.Panel();
-            this.pnlParasaurolofo = new System.Windows.Forms.Panel();
-            this.pnlEspinossauro = new System.Windows.Forms.Panel();
-            this.pnlBraquiossauro = new System.Windows.Forms.Panel();
-            this.pnlTiranossauro = new System.Windows.Forms.Panel();
             this.picTabuleiro = new System.Windows.Forms.PictureBox();
             this.tmrVerificarPartidas = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picTabuleiro)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnListarPartidas
             // 
-            this.button1.Location = new System.Drawing.Point(865, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 44);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Consultar Partidas";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnListarPartidas.Location = new System.Drawing.Point(887, 50);
+            this.btnListarPartidas.Name = "btnListarPartidas";
+            this.btnListarPartidas.Size = new System.Drawing.Size(111, 44);
+            this.btnListarPartidas.TabIndex = 0;
+            this.btnListarPartidas.Text = "Consultar Partidas";
+            this.btnListarPartidas.UseVisualStyleBackColor = true;
+            this.btnListarPartidas.Click += new System.EventHandler(this.btnListarPartidas_Click);
             // 
             // lstDadosPartida
             // 
@@ -106,7 +89,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(910, 171);
+            this.lblID.Location = new System.Drawing.Point(910, 150);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(68, 13);
             this.lblID.TabIndex = 2;
@@ -124,7 +107,7 @@
             // lblDataDaPartida
             // 
             this.lblDataDaPartida.AutoSize = true;
-            this.lblDataDaPartida.Location = new System.Drawing.Point(910, 124);
+            this.lblDataDaPartida.Location = new System.Drawing.Point(902, 116);
             this.lblDataDaPartida.Name = "lblDataDaPartida";
             this.lblDataDaPartida.Size = new System.Drawing.Size(80, 13);
             this.lblDataDaPartida.TabIndex = 4;
@@ -172,7 +155,7 @@
             // 
             // btnEntrarNaPartida
             // 
-            this.btnEntrarNaPartida.Location = new System.Drawing.Point(73, 362);
+            this.btnEntrarNaPartida.Location = new System.Drawing.Point(88, 362);
             this.btnEntrarNaPartida.Name = "btnEntrarNaPartida";
             this.btnEntrarNaPartida.Size = new System.Drawing.Size(134, 60);
             this.btnEntrarNaPartida.TabIndex = 11;
@@ -229,19 +212,19 @@
             this.btnIniciarPartida.UseVisualStyleBackColor = true;
             this.btnIniciarPartida.Click += new System.EventHandler(this.btnIniciarPartida_Click);
             // 
-            // lbl4
+            // lblVersao
             // 
-            this.lbl4.AutoSize = true;
-            this.lbl4.Location = new System.Drawing.Point(1129, 627);
-            this.lbl4.Name = "lbl4";
-            this.lbl4.Size = new System.Drawing.Size(40, 13);
-            this.lbl4.TabIndex = 18;
-            this.lbl4.Text = "Versão";
+            this.lblVersao.AutoSize = true;
+            this.lblVersao.Location = new System.Drawing.Point(1132, 663);
+            this.lblVersao.Name = "lblVersao";
+            this.lblVersao.Size = new System.Drawing.Size(40, 13);
+            this.lblVersao.TabIndex = 18;
+            this.lblVersao.Text = "Versão";
             // 
             // lstMaoJogador
             // 
             this.lstMaoJogador.FormattingEnabled = true;
-            this.lstMaoJogador.Location = new System.Drawing.Point(284, 315);
+            this.lstMaoJogador.Location = new System.Drawing.Point(312, 315);
             this.lstMaoJogador.Name = "lstMaoJogador";
             this.lstMaoJogador.Size = new System.Drawing.Size(120, 95);
             this.lstMaoJogador.TabIndex = 19;
@@ -249,7 +232,7 @@
             // lblNossoGrupo
             // 
             this.lblNossoGrupo.AutoSize = true;
-            this.lblNossoGrupo.Location = new System.Drawing.Point(242, 9);
+            this.lblNossoGrupo.Location = new System.Drawing.Point(417, 9);
             this.lblNossoGrupo.Name = "lblNossoGrupo";
             this.lblNossoGrupo.Size = new System.Drawing.Size(320, 13);
             this.lblNossoGrupo.TabIndex = 20;
@@ -258,7 +241,7 @@
             // lblTurno
             // 
             this.lblTurno.AutoSize = true;
-            this.lblTurno.Location = new System.Drawing.Point(489, 281);
+            this.lblTurno.Location = new System.Drawing.Point(464, 409);
             this.lblTurno.Name = "lblTurno";
             this.lblTurno.Size = new System.Drawing.Size(62, 13);
             this.lblTurno.TabIndex = 21;
@@ -267,7 +250,7 @@
             // lblJogadorDaVez
             // 
             this.lblJogadorDaVez.AutoSize = true;
-            this.lblJogadorDaVez.Location = new System.Drawing.Point(597, 281);
+            this.lblJogadorDaVez.Location = new System.Drawing.Point(545, 409);
             this.lblJogadorDaVez.Name = "lblJogadorDaVez";
             this.lblJogadorDaVez.Size = new System.Drawing.Size(128, 13);
             this.lblJogadorDaVez.TabIndex = 22;
@@ -276,99 +259,11 @@
             // lblDado
             // 
             this.lblDado.AutoSize = true;
-            this.lblDado.Location = new System.Drawing.Point(597, 315);
+            this.lblDado.Location = new System.Drawing.Point(549, 442);
             this.lblDado.Name = "lblDado";
             this.lblDado.Size = new System.Drawing.Size(119, 13);
             this.lblDado.TabIndex = 23;
             this.lblDado.Text = "Valor do Dado sorteado";
-            // 
-            // lstCercados
-            // 
-            this.lstCercados.FormattingEnabled = true;
-            this.lstCercados.Location = new System.Drawing.Point(431, 315);
-            this.lstCercados.Name = "lstCercados";
-            this.lstCercados.Size = new System.Drawing.Size(120, 95);
-            this.lstCercados.TabIndex = 24;
-            // 
-            // btnJogar
-            // 
-            this.btnJogar.Location = new System.Drawing.Point(600, 344);
-            this.btnJogar.Name = "btnJogar";
-            this.btnJogar.Size = new System.Drawing.Size(112, 27);
-            this.btnJogar.TabIndex = 25;
-            this.btnJogar.Text = "Realizar Jogada";
-            this.btnJogar.UseVisualStyleBackColor = true;
-            this.btnJogar.Click += new System.EventHandler(this.btnJogar_Click);
-            // 
-            // txtCercado
-            // 
-            this.txtCercado.Location = new System.Drawing.Point(620, 402);
-            this.txtCercado.Name = "txtCercado";
-            this.txtCercado.Size = new System.Drawing.Size(100, 20);
-            this.txtCercado.TabIndex = 26;
-            // 
-            // lblCercado
-            // 
-            this.lblCercado.AutoSize = true;
-            this.lblCercado.Location = new System.Drawing.Point(564, 405);
-            this.lblCercado.Name = "lblCercado";
-            this.lblCercado.Size = new System.Drawing.Size(50, 13);
-            this.lblCercado.TabIndex = 27;
-            this.lblCercado.Text = "Cercado:";
-            // 
-            // flowFlorestaIgualdade
-            // 
-            this.flowFlorestaIgualdade.BackColor = System.Drawing.Color.Transparent;
-            this.flowFlorestaIgualdade.Location = new System.Drawing.Point(790, 252);
-            this.flowFlorestaIgualdade.Name = "flowFlorestaIgualdade";
-            this.flowFlorestaIgualdade.Size = new System.Drawing.Size(105, 64);
-            this.flowFlorestaIgualdade.TabIndex = 29;
-            // 
-            // flowCampinaDiferenca
-            // 
-            this.flowCampinaDiferenca.BackColor = System.Drawing.Color.Transparent;
-            this.flowCampinaDiferenca.Location = new System.Drawing.Point(1011, 374);
-            this.flowCampinaDiferenca.Name = "flowCampinaDiferenca";
-            this.flowCampinaDiferenca.Size = new System.Drawing.Size(114, 57);
-            this.flowCampinaDiferenca.TabIndex = 30;
-            // 
-            // flowMataTripla
-            // 
-            this.flowMataTripla.Location = new System.Drawing.Point(790, 363);
-            this.flowMataTripla.Name = "flowMataTripla";
-            this.flowMataTripla.Size = new System.Drawing.Size(105, 68);
-            this.flowMataTripla.TabIndex = 31;
-            // 
-            // flowIlhaSolitaria
-            // 
-            this.flowIlhaSolitaria.BackColor = System.Drawing.Color.Transparent;
-            this.flowIlhaSolitaria.Location = new System.Drawing.Point(1067, 476);
-            this.flowIlhaSolitaria.Name = "flowIlhaSolitaria";
-            this.flowIlhaSolitaria.Size = new System.Drawing.Size(68, 42);
-            this.flowIlhaSolitaria.TabIndex = 32;
-            // 
-            // flowPradariaAmor
-            // 
-            this.flowPradariaAmor.BackColor = System.Drawing.Color.Transparent;
-            this.flowPradariaAmor.Location = new System.Drawing.Point(802, 476);
-            this.flowPradariaAmor.Name = "flowPradariaAmor";
-            this.flowPradariaAmor.Size = new System.Drawing.Size(93, 63);
-            this.flowPradariaAmor.TabIndex = 33;
-            // 
-            // flowReiSelva
-            // 
-            this.flowReiSelva.BackColor = System.Drawing.Color.Transparent;
-            this.flowReiSelva.Location = new System.Drawing.Point(1029, 259);
-            this.flowReiSelva.Name = "flowReiSelva";
-            this.flowReiSelva.Size = new System.Drawing.Size(51, 35);
-            this.flowReiSelva.TabIndex = 34;
-            // 
-            // flowMao
-            // 
-            this.flowMao.Location = new System.Drawing.Point(15, 540);
-            this.flowMao.Name = "flowMao";
-            this.flowMao.Size = new System.Drawing.Size(147, 100);
-            this.flowMao.TabIndex = 35;
             // 
             // lblSenhaPartida
             // 
@@ -436,96 +331,26 @@
             // lstHistorico
             // 
             this.lstHistorico.FormattingEnabled = true;
-            this.lstHistorico.Location = new System.Drawing.Point(605, 476);
+            this.lstHistorico.Location = new System.Drawing.Point(314, 442);
             this.lstHistorico.Name = "lstHistorico";
-            this.lstHistorico.Size = new System.Drawing.Size(120, 95);
+            this.lstHistorico.Size = new System.Drawing.Size(181, 173);
             this.lstHistorico.TabIndex = 43;
-            // 
-            // btnAtualizar
-            // 
-            this.btnAtualizar.Location = new System.Drawing.Point(590, 598);
-            this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(122, 42);
-            this.btnAtualizar.TabIndex = 44;
-            this.btnAtualizar.Text = "Atualizar Turno";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
-            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // lblHistorico
             // 
             this.lblHistorico.AutoSize = true;
-            this.lblHistorico.Location = new System.Drawing.Point(504, 476);
+            this.lblHistorico.Location = new System.Drawing.Point(213, 442);
             this.lblHistorico.Name = "lblHistorico";
             this.lblHistorico.Size = new System.Drawing.Size(95, 13);
             this.lblHistorico.TabIndex = 45;
             this.lblHistorico.Text = "Histórico do Jogo: ";
             // 
-            // pnlTriceratops
-            // 
-            this.pnlTriceratops.BackColor = System.Drawing.Color.Transparent;
-            this.pnlTriceratops.BackgroundImage = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.triceratops;
-            this.pnlTriceratops.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlTriceratops.Location = new System.Drawing.Point(376, 540);
-            this.pnlTriceratops.Name = "pnlTriceratops";
-            this.pnlTriceratops.Size = new System.Drawing.Size(60, 55);
-            this.pnlTriceratops.TabIndex = 50;
-            // 
-            // pnlEstegossauro
-            // 
-            this.pnlEstegossauro.BackColor = System.Drawing.Color.Transparent;
-            this.pnlEstegossauro.BackgroundImage = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.estegossauro;
-            this.pnlEstegossauro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlEstegossauro.Location = new System.Drawing.Point(215, 540);
-            this.pnlEstegossauro.Name = "pnlEstegossauro";
-            this.pnlEstegossauro.Size = new System.Drawing.Size(48, 55);
-            this.pnlEstegossauro.TabIndex = 48;
-            // 
-            // pnlParasaurolofo
-            // 
-            this.pnlParasaurolofo.BackColor = System.Drawing.Color.Transparent;
-            this.pnlParasaurolofo.BackgroundImage = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.parasaurolofo;
-            this.pnlParasaurolofo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlParasaurolofo.Location = new System.Drawing.Point(284, 540);
-            this.pnlParasaurolofo.Name = "pnlParasaurolofo";
-            this.pnlParasaurolofo.Size = new System.Drawing.Size(60, 55);
-            this.pnlParasaurolofo.TabIndex = 49;
-            // 
-            // pnlEspinossauro
-            // 
-            this.pnlEspinossauro.BackColor = System.Drawing.Color.Transparent;
-            this.pnlEspinossauro.BackgroundImage = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.espinossauro;
-            this.pnlEspinossauro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlEspinossauro.Location = new System.Drawing.Point(376, 463);
-            this.pnlEspinossauro.Name = "pnlEspinossauro";
-            this.pnlEspinossauro.Size = new System.Drawing.Size(60, 55);
-            this.pnlEspinossauro.TabIndex = 51;
-            // 
-            // pnlBraquiossauro
-            // 
-            this.pnlBraquiossauro.BackColor = System.Drawing.Color.Transparent;
-            this.pnlBraquiossauro.BackgroundImage = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.braquiossauro;
-            this.pnlBraquiossauro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlBraquiossauro.Location = new System.Drawing.Point(284, 463);
-            this.pnlBraquiossauro.Name = "pnlBraquiossauro";
-            this.pnlBraquiossauro.Size = new System.Drawing.Size(60, 55);
-            this.pnlBraquiossauro.TabIndex = 47;
-            // 
-            // pnlTiranossauro
-            // 
-            this.pnlTiranossauro.BackColor = System.Drawing.Color.Transparent;
-            this.pnlTiranossauro.BackgroundImage = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.tiranossauro;
-            this.pnlTiranossauro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlTiranossauro.Location = new System.Drawing.Point(216, 460);
-            this.pnlTiranossauro.Name = "pnlTiranossauro";
-            this.pnlTiranossauro.Size = new System.Drawing.Size(47, 58);
-            this.pnlTiranossauro.TabIndex = 46;
-            // 
             // picTabuleiro
             // 
             this.picTabuleiro.Image = global::PI_Projeto_Integrador_Sistema_Autônomo.Properties.Resources.Tabuleiro;
-            this.picTabuleiro.Location = new System.Drawing.Point(748, 222);
+            this.picTabuleiro.Location = new System.Drawing.Point(704, 222);
             this.picTabuleiro.Name = "picTabuleiro";
-            this.picTabuleiro.Size = new System.Drawing.Size(431, 390);
+            this.picTabuleiro.Size = new System.Drawing.Size(474, 431);
             this.picTabuleiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTabuleiro.TabIndex = 28;
             this.picTabuleiro.TabStop = false;
@@ -535,19 +360,22 @@
             this.tmrVerificarPartidas.Interval = 5000;
             this.tmrVerificarPartidas.Tick += new System.EventHandler(this.tmrVerificarPartidas_Tick);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(215, 315);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 13);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "Mao Do Jogador: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1205, 692);
-            this.Controls.Add(this.pnlEstegossauro);
-            this.Controls.Add(this.pnlParasaurolofo);
-            this.Controls.Add(this.pnlTriceratops);
-            this.Controls.Add(this.pnlEspinossauro);
-            this.Controls.Add(this.pnlBraquiossauro);
-            this.Controls.Add(this.pnlTiranossauro);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblHistorico);
-            this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.lstHistorico);
             this.Controls.Add(this.lblSenhaDoJogadorAtual);
             this.Controls.Add(this.lblIDJogadorAtual);
@@ -556,24 +384,13 @@
             this.Controls.Add(this.lblNomeJogador);
             this.Controls.Add(this.IDPartida);
             this.Controls.Add(this.lblSenhaPartida);
-            this.Controls.Add(this.flowMao);
-            this.Controls.Add(this.flowReiSelva);
-            this.Controls.Add(this.flowPradariaAmor);
-            this.Controls.Add(this.flowIlhaSolitaria);
-            this.Controls.Add(this.flowMataTripla);
-            this.Controls.Add(this.flowCampinaDiferenca);
-            this.Controls.Add(this.flowFlorestaIgualdade);
             this.Controls.Add(this.picTabuleiro);
-            this.Controls.Add(this.lblCercado);
-            this.Controls.Add(this.txtCercado);
-            this.Controls.Add(this.btnJogar);
-            this.Controls.Add(this.lstCercados);
             this.Controls.Add(this.lblDado);
             this.Controls.Add(this.lblJogadorDaVez);
             this.Controls.Add(this.lblTurno);
             this.Controls.Add(this.lblNossoGrupo);
             this.Controls.Add(this.lstMaoJogador);
-            this.Controls.Add(this.lbl4);
+            this.Controls.Add(this.lblVersao);
             this.Controls.Add(this.btnIniciarPartida);
             this.Controls.Add(this.lblSenhaJogador);
             this.Controls.Add(this.lblIdJogador);
@@ -590,7 +407,7 @@
             this.Controls.Add(this.lblNomeDaPartida);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.lstDadosPartida);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnListarPartidas);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.picTabuleiro)).EndInit();
@@ -601,7 +418,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnListarPartidas;
         private System.Windows.Forms.ListBox lstDadosPartida;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblNomeDaPartida;
@@ -618,24 +435,13 @@
         private System.Windows.Forms.Label lblIdJogador;
         private System.Windows.Forms.Label lblSenhaJogador;
         private System.Windows.Forms.Button btnIniciarPartida;
-        private System.Windows.Forms.Label lbl4;
+        private System.Windows.Forms.Label lblVersao;
         private System.Windows.Forms.ListBox lstMaoJogador;
         private System.Windows.Forms.Label lblNossoGrupo;
         private System.Windows.Forms.Label lblTurno;
         private System.Windows.Forms.Label lblJogadorDaVez;
         private System.Windows.Forms.Label lblDado;
-        private System.Windows.Forms.ListBox lstCercados;
-        private System.Windows.Forms.Button btnJogar;
-        private System.Windows.Forms.TextBox txtCercado;
-        private System.Windows.Forms.Label lblCercado;
         private System.Windows.Forms.PictureBox picTabuleiro;
-        private System.Windows.Forms.FlowLayoutPanel flowFlorestaIgualdade;
-        private System.Windows.Forms.FlowLayoutPanel flowCampinaDiferenca;
-        private System.Windows.Forms.FlowLayoutPanel flowMataTripla;
-        private System.Windows.Forms.FlowLayoutPanel flowIlhaSolitaria;
-        private System.Windows.Forms.FlowLayoutPanel flowPradariaAmor;
-        private System.Windows.Forms.FlowLayoutPanel flowReiSelva;
-        private System.Windows.Forms.FlowLayoutPanel flowMao;
         private System.Windows.Forms.Label lblSenhaPartida;
         private System.Windows.Forms.Label IDPartida;
         private System.Windows.Forms.Label lblNomeJogador;
@@ -644,15 +450,9 @@
         private System.Windows.Forms.Label lblIDJogadorAtual;
         private System.Windows.Forms.Label lblSenhaDoJogadorAtual;
         private System.Windows.Forms.ListBox lstHistorico;
-        private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Label lblHistorico;
-        private System.Windows.Forms.Panel pnlTiranossauro;
-        private System.Windows.Forms.Panel pnlBraquiossauro;
-        private System.Windows.Forms.Panel pnlEstegossauro;
-        private System.Windows.Forms.Panel pnlParasaurolofo;
-        private System.Windows.Forms.Panel pnlTriceratops;
-        private System.Windows.Forms.Panel pnlEspinossauro;
         private System.Windows.Forms.Timer tmrVerificarPartidas;
+        private System.Windows.Forms.Label label3;
     }
 }
 
